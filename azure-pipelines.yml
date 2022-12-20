@@ -27,3 +27,9 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    repository: 'java-pipeline.yaml'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
