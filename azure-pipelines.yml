@@ -37,12 +37,12 @@ steps:
   displayName: Login to Docker Hub
   inputs:
     command: login
-    containerRegistry: dockerRegistryServiceConnection2
+    containerRegistry: 'DockerHub'
 - task: Docker@2
   displayName: Build and Push
   inputs:
     command: buildAndPush
-    repository: africanbiotech # username/contosoRepository for DockerHub
+    repository: africanbiotech # username/africanbiotech for DockerHub
     tags: |
       tag1
       tag2
