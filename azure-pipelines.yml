@@ -30,7 +30,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub'
-    repository: 'java-pipeline.yaml'
+    repository: 'africanbiotech/java-pipeline.yaml'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
 - task: Docker@2
@@ -42,7 +42,7 @@ steps:
   displayName: Build and Push
   inputs:
     command: buildAndPush
-    repository: africanbiotech # username/africanbiotech for DockerHub
+    repository: africanbiotech/java-pipeline.yaml # username/africanbiotech for DockerHub
     tags: |
       tag1
       tag2
